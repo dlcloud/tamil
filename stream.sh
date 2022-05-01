@@ -19,4 +19,4 @@ elif [[ $INPUT_URL =~ ^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$ ]];
 fi
 
 printf "PREPARING TO STREAM \n"
-ffmpeg -i $INPUT_URL -preset $PRESET -tune zerolatency -f flv -c:v libx264 -c:a aac -r 30 -crf $CRF -vf "scale=-1:1080" $SERVER_URL$STREAM_KEY
+ffmpeg -user_agent "REDLINECLIENT" -i $INPUT_URL -preset $PRESET -tune zerolatency -f flv -c:v libx264 -c:a aac -r 30 -crf $CRF -vf "scale=-1:720" $SERVER_URL$STREAM_KEY
